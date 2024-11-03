@@ -1,0 +1,12 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.menu-button {
+    display: flex;
+    justify-content: end;
+    margin: 1%;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
