@@ -14,9 +14,17 @@
   display: flex;
 }
 
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+}
+
 .menu-content {
   text-align: center;
-  padding-left: 1%;
 }
 
 .menu-content ul {
@@ -31,4 +39,25 @@
   color: black;
   text-decoration: none;
   font-size: 84px;
+}
+
+.sub-menu {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  padding: 1%;
+}
+
+.sub-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.sub-menu ul li .sub-menu-items{
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
 }
