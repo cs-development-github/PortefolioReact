@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Menu.css';
 
 function Menu({ isOpen, onClose }) {
@@ -7,10 +8,10 @@ function Menu({ isOpen, onClose }) {
       <div className="menu">
         <div className="menu-content">
           <ul>
-            <li><a className='menu-items' href="#home">Index</a></li>
-            <li><a className='menu-items' href="#about">About</a></li>
-            <li><a className='menu-items' href="#portfolio">Projets</a></li>
-            <li><a className='menu-items' href="#contact">Contact</a></li>
+            <li><NavLink className={({ isActive }) => isActive ? 'menu-items active' : 'menu-items'} to="/" onClick={onClose}>Index</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? 'menu-items active' : 'menu-items'} to="/about" onClick={onClose}>About</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? 'menu-items active' : 'menu-items'} to="/projects" onClick={onClose}>Projets</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? 'menu-items active' : 'menu-items'} to="/contact" onClick={onClose}>Contact</NavLink></li>
           </ul>
         </div>
         <div className="sub-menu">

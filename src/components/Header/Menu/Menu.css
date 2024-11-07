@@ -61,3 +61,8 @@
   text-decoration: none;
   font-size: 18px;
 }
+
+.menu-items.active {
+  text-decoration: line-through;
+  color: red; /* Optionnel, pour attirer l'attention */
+}
