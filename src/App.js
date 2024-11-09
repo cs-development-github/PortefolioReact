@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -16,27 +15,27 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="HomePage">
-          <div className="header">
-            <div className="current-time">
-              <RealTimeClock />
-            </div>
-            <p className="menu-button" onClick={toggleMenu}>
-              {isMenuOpen ? 'CLOSE' : 'MENU'}
-            </p>
+        <div className="header">
+          <div className="current-time">
+            <RealTimeClock />
           </div>
-          <Menu isOpen={isMenuOpen} onClose={toggleMenu} />
+          <p className="menu-button" onClick={toggleMenu}>
+            {isMenuOpen ? 'CLOSE' : 'MENU'}
+          </p>
         </div>
-        {/* Configuration des routes */}
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Menu isOpen={isMenuOpen} onClose={toggleMenu} />
+        <div className="page-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projets" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
 }
+
 
 export default App;

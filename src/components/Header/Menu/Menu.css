@@ -3,6 +3,7 @@
   top: 5%;
   left: 0;
   width: 100%;
+  background-color: white;
   height: 95%;
   display: none;  
   align-items: center;
@@ -63,6 +64,6 @@
 }
 
 .menu-items.active {
-  text-decoration: line-through;
-  color: red; /* Optionnel, pour attirer l'attention */
+  font-weight: bold;
+  text-decoration: underline;
 }
