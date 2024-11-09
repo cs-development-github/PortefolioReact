@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 .menu-overlay {
   position: fixed;
   top: 5%;
@@ -38,6 +40,7 @@
 
 .menu-content ul li .menu-items{
   color: black;
+  font-family: 'Playfair Display', serif;
   text-decoration: none;
   font-size: 84px;
 }
@@ -59,11 +62,12 @@
 
 .sub-menu ul li .sub-menu-items{
   color: black;
+  font-family: 'Playfair Display', serif;
   text-decoration: none;
   font-size: 18px;
 }
 
 .menu-items.active {
   font-weight: bold;
-  text-decoration: underline;
+  font-style: italic;
 }
