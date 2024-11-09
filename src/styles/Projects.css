@@ -1,0 +1,8 @@
+.projects-grid {
+    justify-content: center;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(4,400px);
+    gap: 11px; /* Espace de 1% entre chaque carte */
+    padding: 1%;
+}
