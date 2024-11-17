@@ -3,14 +3,20 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
-.header{
+
+.header {
     display: flex;
     padding: 1%;
     justify-content: space-between;
     font-weight: 700;
+    background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .menu-button {
     cursor: pointer;
 }
+
+.no-scroll {
+    overflow: hidden;
+  }

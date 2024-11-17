@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Menu.css';
 
 function Menu({ isOpen, onClose }) {
+  useEffect(() => {
+    // Ajoute ou enlève la classe `no-scroll` en fonction de l'état `isOpen`
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    // Nettoyage pour éviter tout effet résiduel
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isOpen]);
+
   return (
     <div className={`menu-overlay ${isOpen ? 'open' : ''}`}>
       <div className="menu">
