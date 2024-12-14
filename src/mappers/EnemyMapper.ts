@@ -8,9 +8,12 @@ export const initializeEnemies = (): Enemy[] => {
 
   const generateRandomHp = (): number => Math.floor(Math.random() * 100) + 50;
 
-  return Array.from({ length: 8 }, (_, index) => ({
+  const generateRnadomSpeed = (): number => Math.floor(Math.random() * 2);
+
+  return Array.from({ length: 2 }, (_, index) => ({
     id: index + 1,
     position: generateRandomPosition(),
     hp: generateRandomHp(),
+    speed: generateRnadomSpeed(),
   }));
 };

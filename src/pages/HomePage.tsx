@@ -3,12 +3,13 @@ import Player from '../components/HomePage/Player/Player';
 import Enemy from '../components/HomePage/Enemy/Enemy';
 import { useGame } from '../contexts/GameContext';
 import usePlayerMovement from '../hooks/usePlayerMovement';
+import useGameLoop from '../hooks/useGameLoop';
 
 const HomePage: React.FC = () => {
-  const { player, setPlayer, enemies, setEnemies } = useGame();
+  const { player, enemies, setEnemies } = useGame();
 
-  // Utilisation du hook pour gérer les déplacements
-  usePlayerMovement({ player, setPlayer });
+  usePlayerMovement(); // Gère le déplacement du joueur
+  useGameLoop(); // Gère le déplacement des ennemis et la synchronisation
 
   const attackEnemy = (id: number): void => {
     setEnemies((prev) =>
@@ -19,7 +20,7 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100vw', height: '100vh', background: '#f0f0f0' }}>
+    <div style={{ position: 'relative', background: '#f0f0f0' }}>
       <Player position={player.position} />
       {enemies.map(
         (enemy) =>

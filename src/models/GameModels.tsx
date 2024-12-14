@@ -14,4 +14,5 @@ export interface Enemy {
     id: number;
     position: Position;
     hp: number;
+    speed: number;
 }
