@@ -6,8 +6,9 @@ import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import RealTimeClock from './components/Header/RealTimeClock/RealTimeClock';
 import './styles/index.css';
-import useToggle from '../src/hooks/useToggle';
+import useToggle from './hooks/useToggle';
 import Menu from './components/Header/Menu/Menu';
+import { GameProvider } from './contexts/GameContext'; // Assure-toi que l'import est correct
 
 function App() {
   const [isMenuOpen, toggleMenu] = useToggle(false);
@@ -19,14 +20,25 @@ function App() {
           <div className="current-time">
             <RealTimeClock />
           </div>
-          <p className="menu-button" onClick={toggleMenu}>
+          <p
+            className="menu-button"
+            onClick={toggleMenu}
+          >
             {isMenuOpen ? 'CLOSE' : 'MENU'}
           </p>
         </div>
         <Menu isOpen={isMenuOpen} onClose={toggleMenu} />
         <div className="page-content">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            {/* Enveloppe HomePage avec GameProvider */}
+            <Route
+              path="/"
+              element={
+                <GameProvider>
+                  <HomePage />
+                </GameProvider>
+              }
+            />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
@@ -36,6 +48,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
