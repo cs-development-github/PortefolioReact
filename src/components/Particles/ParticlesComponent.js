@@ -25,7 +25,7 @@ const ParticlesComponent = (props) => {
       },
       particles: {
         number: {
-          value: 80, // Nombre de particules
+          value: 80,
           density: { enable: true, value_area: 800 },
         },
         color: { value: "#1e1f1f" }, 
