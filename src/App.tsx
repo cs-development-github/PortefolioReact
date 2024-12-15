@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Projects from './pages/Projects';
+import Projects from './pages/project';
 import RealTimeClock from './components/Header/RealTimeClock/RealTimeClock';
 import './styles/index.css';
 import useToggle from '../src/hooks/useToggle';
