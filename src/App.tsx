@@ -6,11 +6,10 @@ import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import RealTimeClock from './components/Header/RealTimeClock/RealTimeClock';
 import './styles/index.css';
-import useToggle from './hooks/useToggle';
+import useToggle from '../src/hooks/useToggle';
 import Menu from './components/Header/Menu/Menu';
-import { GameProvider } from './contexts/GameContext'; // Assure-toi que l'import est correct
 
-function App() {
+const App: React.FC = () => {
   const [isMenuOpen, toggleMenu] = useToggle(false);
 
   return (
@@ -20,25 +19,14 @@ function App() {
           <div className="current-time">
             <RealTimeClock />
           </div>
-          <p
-            className="menu-button"
-            onClick={toggleMenu}
-          >
+          <p className="menu-button" onClick={toggleMenu}>
             {isMenuOpen ? 'CLOSE' : 'MENU'}
           </p>
         </div>
         <Menu isOpen={isMenuOpen} onClose={toggleMenu} />
         <div className="page-content">
           <Routes>
-            {/* Enveloppe HomePage avec GameProvider */}
-            <Route
-              path="/"
-              element={
-                <GameProvider>
-                  <HomePage />
-                </GameProvider>
-              }
-            />
+            <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
@@ -47,6 +35,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
